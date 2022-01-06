@@ -9,21 +9,57 @@
   </head>
   <body>
     <!-- header -->
-    <header class="py-5 border-b border-blue-500/20">
+    <header class="px-6 md:px-0 py-3 md:py-5 md:border-b border-blue-500/20">
       <div class="container mx-auto">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-20">
-            <a href="#"
-              ><img src="images/logo.png" alt="" class="cursor-pointer"
-            /></a>
-            <ul class="flex items-center space-x-8">
+        <div
+          x-data="{ open: false }"
+          class="flex flex-col md:flex-row md:items-center md:justify-between"
+        >
+          <div class="flex flex-col md:flex-row md:items-center md:space-x-20">
+            <div class="flex items-center justify-between">
+              <a href="#"
+                ><img src="images/logo.png" alt="" class="cursor-pointer"
+              /></a>
+              <button
+                @click="open = !open"
+                class="md:hidden rounded-lg focus:outline-none border-2 border-transparent focus:border-blue-10/50"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-gray-10"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    x-show="!open"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+
+                  <path
+                    x-show="open"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <ul
+              :class="{'flex': open, 'hidden': !open}"
+              class="md:flex flex-col md:flex-row md:items-center md:space-x-8 mt-5 md:mt-0 space-y-4 md:space-y-0"
+            >
               <li class="nav-link text-gray-15 font-semibold">Home</li>
               <li class="nav-link">Community</li>
               <li class="nav-link">Blog</li>
               <li class="nav-link">Events</li>
             </ul>
           </div>
-          <div class="flex items-center space-x-10">
+          <div class="hidden md:flex items-center space-x-10">
             <div class="flex items-center space-x-3 border-b py-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,15 +83,7 @@
             </div>
             <a
               href="#"
-              class="
-                bg-blue-10
-                px-9
-                py-4
-                rounded-2xl
-                text-xs text-white
-                font-inter font-semibold
-                shadow-lg shadow-blue-10/30
-              "
+              class="bg-blue-10 px-9 py-4 rounded-2xl text-xs text-white font-inter font-semibold shadow-lg shadow-blue-10/30"
               >Log in</a
             >
           </div>
@@ -65,74 +93,60 @@
     <!-- end header -->
     <!-- hero -->
     <section class="bg-gradient-to-br from-white to-blue-10/20">
-      <div class="container mx-auto w-full flex items-center py-20">
-        <div class="w-1/2">
+      <div
+        class="container mx-auto w-full flex items-center py-20 px-6 md:px-0"
+      >
+        <div class="w-full md:w-1/2">
           <a
             href="#"
-            class="
-              font-inter
-              text-blue-10 text-xs
-              font-medium
-              px-8
-              py-3
-              bg-blue-10/10
-              rounded-lg
-            "
+            class="font-inter text-blue-10 text-xs font-medium px-8 py-3 bg-blue-10/10 rounded-lg"
             >Netbook community</a
           >
-          <h1 class="text-7xl font-bold font-inter text-purple-10 my-8">
+          <h1
+            class="text-4xl md:text-7xl font-bold font-inter text-purple-10 my-8"
+          >
             Your Solutions For Community!
           </h1>
-          <p class="font-inter text-gray-10 text-lg">
+          <p class="font-inter text-gray-10 text-base md:text-lg">
             More than 2 billion people in over countries use socibook<br />
             to stay in touch with friends & family.
           </p>
-          <div class="mt-10 flex items-center space-x-5">
+          <div
+            class="mt-10 flex flex-col space-y-4 md:space-y-0 md:flex-row md:items-center md:space-x-5"
+          >
             <a
               href="#"
-              class="
-                bg-blue-10
-                px-11
-                py-6
-                rounded-2xl
-                text-sm text-white
-                font-inter
-                shadow-lg shadow-blue-10/30
-              "
+              class="bg-blue-10 px-11 py-6 rounded-2xl text-sm text-white font-inter shadow-lg shadow-blue-10/30 flex items-center justify-center"
               >About More</a
             >
             <a
               href="#"
-              class="
-                bg-white
-                px-11
-                py-6
-                rounded-2xl
-                text-sm text-blue-10
-                font-inter font-medium
-                border border-blue-10
-              "
+              class="bg-white px-11 py-6 rounded-2xl text-sm text-blue-10 font-inter font-medium border border-blue-10 flex items-center justify-center"
               >Invite Friend</a
             >
           </div>
         </div>
-        <div class="w-1/2">
+        <div class="w-1/2 hidden md:block">
           <img src="images/hero.png" alt="" />
         </div>
       </div>
     </section>
     <!-- end hero -->
     <!-- why netbook -->
-    <div class="container mx-auto py-32 flex items-center">
-      <div class="w-1/2">
-        <span class="font-inter font-medium text-lg text-blue-10"
+    <div
+      class="container mx-auto py-16 md:py-32 flex flex-col md:flex-row items-center px-6 md:px-0"
+    >
+      <div class="w-full md:w-1/2">
+        <span class="font-inter font-medium text-base md:text-lg text-blue-10"
           >Whats Netbook?</span
         >
-        <h2 class="font-bold font-inter text-4xl text-purple-10 my-5">
+        <h2
+          class="font-bold font-inter text-2xl md:text-4xl text-purple-10 my-5"
+        >
           Why Join to Netbook <br />
           Social Network?
         </h2>
-        <p class="w-[406px] font-inter text-gray-10">
+        <p class="w-full md:w-[406px] font-inter text-gray-10">
           Recent surveys have indicated that small businesses recognise the need
           they have to connect with <br />
           consumer.
@@ -158,23 +172,11 @@
           </li>
         </ul>
       </div>
-      <div class="w-1/2 mx-auto">
-        <div class="grid grid-cols-2 grid-rows-2 gap-y-5">
-          <div class="row-span-2 place-self-center relative">
+      <div class="w-full md:w-1/2 mx-auto mt-10 md:mt-0">
+        <div class="grid grid-cols-2 grid-rows-2 gap-y-2 md:gap-y-5">
+          <div class="row-span-2 place-self-center relative mr-2 md:mr-0">
             <div
-              class="
-                absolute
-                bg-white
-                h-12
-                w-12
-                rounded-full
-                top-1/2
-                left-28
-                flex
-                items-center
-                justify-center
-                cursor-pointer
-              "
+              class="hidden absolute bg-white h-12 w-12 rounded-full top-1/2 left-28 md:flex items-center justify-center cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -198,10 +200,14 @@
     </div>
     <!-- end why netbook -->
     <!-- achievments -->
-    <div class="container mx-auto py-16 flex space-x-20">
-      <div class="flex items-center space-x-11">
+    <div
+      class="container mx-auto py-16 flex flex-col md:flex-row md:space-x-20 px-6 md:px-0"
+    >
+      <div
+        class="flex flex-col md:flex-col items-center md:space-x-11 space-y-7 md:space-y-0"
+      >
         <div
-          class="w-[336px] h-[340px] bg-white border rounded-xl shadow-2xl p-5"
+          class="w-full md:w-[336px] h-[340px] bg-white border rounded-xl shadow-2xl p-5"
         >
           <div class="flex items-center space-x-3">
             <svg
@@ -253,7 +259,9 @@
             </svg>
           </div>
         </div>
-        <div class="w-[336px] h-[340px] bg-white border rounded-xl p-5">
+        <div
+          class="w-full md:w-[336px] h-[340px] bg-white border rounded-xl p-5"
+        >
           <div class="flex items-center space-x-3">
             <img src="images/Trophy.png" alt="" />
             <span class="text-xl font-inter font-medium text-purple-10"
@@ -291,30 +299,25 @@
           </div>
         </div>
       </div>
-      <div>
-        <span class="font-inter font-medium text-lg text-blue-10"
+      <div class="mt-10 md:mt-0">
+        <span class="font-inter font-medium text-base md:text-lg text-blue-10"
           >Our Achievement</span
         >
-        <h2 class="font-bold text-purple-10 font-inter text-4xl mt-4">
+        <h2
+          class="font-bold text-purple-10 font-inter text-2xl md:text-4xl mt-4"
+        >
           We are Connecting<br />
           You The Digital Life.
         </h2>
-        <p class="text-gray-10 w-[365px] font-inter mt-9 mb-11">
+        <p
+          class="text-gray-10 w-full md:w-[365px] font-inter mt-5 md:mt-9 mb-11"
+        >
           The scope the Social Media becomes crucial Is helps the business to
           directly engage with their needs and wants.
         </p>
         <a
           href="#"
-          class="
-            px-9
-            py-6
-            bg-blue-10
-            text-white
-            rounded-2xl
-            text-sm
-            font-medium
-            shadow-lg shadow-blue-10/20
-          "
+          class="px-6 py-4 md:px-9 md:py-6 bg-blue-10 text-white rounded-2xl text-sm font-medium shadow-lg shadow-blue-10/20"
           >Discover me
         </a>
       </div>
@@ -322,151 +325,100 @@
     <!-- end achievments -->
     <!-- feature -->
     <section class="py-16 bg-blue-10/10">
-      <div class="container mx-auto">
+      <div class="container mx-auto px-6 md:px-0">
         <div class="text-center">
-          <span class="font-inter font-medium text-lg text-blue-10"
+          <span class="font-inter font-medium text-base md:text-lg text-blue-10"
             >Our Community</span
           >
-          <h3 class="font-inter font-bold text-purple-10 text-4xl mt-3">
+          <h3
+            class="font-inter font-bold text-purple-10 text-2xl md:text-4xl mt-3"
+          >
             Community Main Feature
           </h3>
-          <p class="w-[421px] mx-auto mt-6 font-inter text-gray-10">
+          <p class="w-full md:w-[421px] mx-auto mt-6 font-inter text-gray-10">
             The wise man therefore always holds in these matters to this
             principle of selection.
           </p>
         </div>
-        <div class="grid grid-cols-2 place-items-center lg:w-[1090px] mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 place-items-center lg:w-[1090px] mx-auto"
+        >
           <div
-            class="
-              bg-white
-              w-[522px]
-              h-[182px]
-              mt-16
-              rounded-2xl
-              p-9
-              flex
-              space-x-5
-              shadow-lg
-            "
+            class="bg-white w-full md:w-[522px] h-auto md:h-[182px] mt-16 rounded-2xl p-3 md:p-9 flex flex-col md:flex-row md:space-x-5 shadow-lg"
           >
-            <img src="images/Icon.png" alt="" />
+            <img src="images/Icon.png" alt="" class="object-contain" />
             <div class="mt-2">
               <h4 class="font-inter font-semibold text-2xl text-gray-35 mb-2">
                 Members, Friends
               </h4>
-              <p class="w-[315px] font-inter text-gray-10">
+              <p class="w-full md:w-[315px] font-inter text-gray-10">
                 Members, Friends Connection ( like followers ), Private Message
               </p>
             </div>
           </div>
           <div
-            class="
-              bg-white
-              w-[522px]
-              h-[182px]
-              mt-16
-              rounded-2xl
-              p-9
-              flex
-              space-x-5
-            "
+            class="bg-white w-full md:w-[522px] h-auto md:h-[182px] mt-16 rounded-2xl p-3 md:p-9 flex flex-col md:flex-row md:space-x-5"
           >
-            <img src="images/Icon1.png" alt="" />
+            <img src="images/Icon1.png" alt="" class="object-contain" />
             <div class="mt-2">
               <h4 class="font-inter font-semibold text-2xl text-gray-35 mb-2">
                 Groups
               </h4>
-              <p class="w-[315px] font-inter text-gray-10">
+              <p class="w-full md:w-[315px] font-inter text-gray-10">
                 Your users can create groups to let other users to join and talk
               </p>
             </div>
           </div>
           <div
-            class="
-              bg-white
-              w-[522px]
-              h-[182px]
-              mt-16
-              rounded-2xl
-              p-9
-              flex
-              space-x-5
-            "
+            class="bg-white w-full md:w-[522px] h-auto md:h-[182px] mt-16 rounded-2xl p-3 md:p-9 flex flex-col md:flex-row md:space-x-5"
           >
-            <img src="images/Icon2.png" alt="" />
+            <img src="images/Icon2.png" alt="" class="object-contain" />
             <div class="mt-2">
               <h4 class="font-inter font-semibold text-2xl text-gray-35 mb-2">
                 Forum
               </h4>
-              <p class="w-[315px] font-inter text-gray-10">
+              <p class="w-full md:w-[315px] font-inter text-gray-10">
                 Forum is ready by BBPress. Your users can make topics and talk.
               </p>
             </div>
           </div>
           <div
-            class="
-              bg-white
-              w-[522px]
-              h-[182px]
-              mt-16
-              rounded-2xl
-              p-9
-              flex
-              space-x-5
-            "
+            class="bg-white w-full md:w-[522px] h-auto md:h-[182px] mt-16 rounded-2xl p-3 md:p-9 flex flex-col md:flex-row md:space-x-5"
           >
-            <img src="images/Icon3.png" alt="" />
+            <img src="images/Icon3.png" alt="" class="object-contain" />
             <div class="mt-2">
               <h4 class="font-inter font-semibold text-2xl text-gray-35 mb-2">
                 Custom Module
               </h4>
-              <p class="w-[315px] font-inter text-gray-10">
+              <p class="w-full md:w-[315px] font-inter text-gray-10">
                 You can create Members, Groups Module. We already created 3
                 modules. It's by drag & drop live builder.
               </p>
             </div>
           </div>
           <div
-            class="
-              bg-white
-              w-[522px]
-              h-[182px]
-              mt-16
-              rounded-2xl
-              p-9
-              flex
-              space-x-5
-            "
+            class="bg-white w-full md:w-[522px] h-auto md:h-[182px] mt-16 rounded-2xl p-3 md:p-9 flex flex-col md:flex-row md:space-x-5"
           >
-            <img src="images/Icon4.png" alt="" />
+            <img src="images/Icon4.png" alt="" class="object-contain" />
             <div class="mt-2">
               <h4 class="font-inter font-semibold text-2xl text-gray-35 mb-2">
                 List Builder
               </h4>
-              <p class="w-[315px] font-inter text-gray-10">
+              <p class="w-full md:w-[315px] font-inter text-gray-10">
                 Members, Groups list can be modified by drag & drop live
                 builder.
               </p>
             </div>
           </div>
           <div
-            class="
-              bg-white
-              w-[522px]
-              h-[182px]
-              mt-16
-              rounded-2xl
-              p-9
-              flex
-              space-x-5
-            "
+            class="bg-white w-full md:w-[522px] h-auto md:h-[182px] mt-16 rounded-2xl p-3 md:p-9 flex flex-col md:flex-row md:space-x-5"
           >
-            <img src="images/Icon5.png" alt="" />
+            <img src="images/Icon5.png" alt="" class="object-contain" />
             <div class="mt-2">
               <h4 class="font-inter font-semibold text-2xl text-gray-35 mb-2">
                 List Scroll Effects
               </h4>
-              <p class="w-[315px] font-inter text-gray-10">
+              <p class="w-full md:w-[315px] font-inter text-gray-10">
                 8 different scroll effects are ready. You can always change by
                 your tastes.
               </p>
@@ -477,75 +429,41 @@
     </section>
     <!-- end feature -->
     <!-- users -->
-    <div class="container mx-auto py-16">
+    <div class="container mx-auto py-16 px-6 md:px-0">
       <div class="text-center">
-        <span class="font-inter font-medium text-lg text-blue-10"
+        <span class="font-inter font-medium text-base md:text-lg text-blue-10"
           >Valuable Team</span
         >
-        <h3 class="font-inter font-bold text-purple-10 text-4xl mt-3">
+        <h3
+          class="font-inter font-bold text-purple-10 text-2xl md:text-4xl mt-3"
+        >
           Our Active Members
         </h3>
-        <p class="w-[421px] mx-auto mt-6 font-inter text-gray-10">
+        <p class="w-full md:w-[421px] mx-auto mt-6 font-inter text-gray-10">
           when an unknown printer took a galley of type and meeting fari
           scrambled it.
         </p>
       </div>
       <div
-        class="
-          w-[474px]
-          h-[72px]
-          mx-auto
-          bg-blue-10/10
-          mt-12
-          rounded-2xl
-          flex
-          items-center
-          justify-around
-        "
+        class="w-full md:w-[474px] h-[72px] mx-auto bg-blue-10/10 mt-12 rounded-2xl flex items-center justify-around"
       >
         <button class="font-medium font-inter text-gray-35">Newst</button>
 
         <button
-          class="
-            w-[150px]
-            h-14
-            bg-blue-10
-            rounded-2xl
-            shadow-md shadow-blue-10/20
-            font-inter font-semibold
-            text-white
-          "
+          class="w-[150px] h-14 bg-blue-10 rounded-2xl shadow-md shadow-blue-10/20 font-inter font-semibold text-white"
         >
           Active
         </button>
         <button class="font-medium font-inter text-gray-35">Popular</button>
       </div>
-      <div class="grid grid-cols-4 w-[1171px] mx-auto mt-12">
+      <div
+        class="flex overflow-scroll pb-6 md:pb-0 scrollbar-hide space-x-3 md:space-x-0 md:grid md:grid-cols-4 w-full md:w-[1171px] mx-auto mt-12 snap-x"
+      >
         <div
-          class="
-            w-[270px]
-            h-[316px]
-            bg-white
-            border
-            rounded-xl
-            flex flex-col
-            py-5
-            space-y-4
-            items-center
-            shadow-xl shadow-gray-400/20
-          "
+          class="w-full flex-shrink-0 snap-center md:w-[270px] h-[316px] bg-white border rounded-xl flex flex-col py-5 space-y-4 items-center shadow-xl shadow-gray-400/20"
         >
           <div
-            class="
-              w-[160px]
-              h-[160px]
-              flex
-              items-center
-              justify-center
-              rounded-full
-              bg-white
-              border-4 border-yellow-400
-            "
+            class="w-[160px] h-[160px] flex items-center justify-center rounded-full bg-white border-4 border-yellow-400"
           >
             <img
               class="w-[142px] h-[142px] rounded-full"
@@ -560,29 +478,10 @@
         </div>
 
         <div
-          class="
-            w-[270px]
-            h-[316px]
-            bg-white
-            border
-            rounded-xl
-            flex flex-col
-            py-5
-            space-y-4
-            items-center
-          "
+          class="w-full flex-shrink-0 snap-center md:w-[270px] h-[316px] bg-white border rounded-xl flex flex-col py-5 space-y-4 items-center"
         >
           <div
-            class="
-              w-[160px]
-              h-[160px]
-              flex
-              items-center
-              justify-center
-              rounded-full
-              bg-white
-              border-4 border-yellow-400
-            "
+            class="w-[160px] h-[160px] flex items-center justify-center rounded-full bg-white border-4 border-yellow-400"
           >
             <img
               class="w-[142px] h-[142px] rounded-full"
@@ -597,29 +496,10 @@
         </div>
 
         <div
-          class="
-            w-[270px]
-            h-[316px]
-            bg-white
-            border
-            rounded-xl
-            flex flex-col
-            py-5
-            space-y-4
-            items-center
-          "
+          class="w-full flex-shrink-0 snap-center md:w-[270px] h-[316px] bg-white border rounded-xl flex flex-col py-5 space-y-4 items-center"
         >
           <div
-            class="
-              w-[160px]
-              h-[160px]
-              flex
-              items-center
-              justify-center
-              rounded-full
-              bg-white
-              border-4 border-yellow-400
-            "
+            class="w-[160px] h-[160px] flex items-center justify-center rounded-full bg-white border-4 border-yellow-400"
           >
             <img
               class="w-[142px] h-[142px] rounded-full"
@@ -634,29 +514,10 @@
         </div>
 
         <div
-          class="
-            w-[270px]
-            h-[316px]
-            bg-white
-            border
-            rounded-xl
-            flex flex-col
-            py-5
-            space-y-4
-            items-center
-          "
+          class="w-full flex-shrink-0 snap-center md:w-[270px] h-[316px] bg-white border rounded-xl flex flex-col py-5 space-y-4 items-center"
         >
           <div
-            class="
-              w-[160px]
-              h-[160px]
-              flex
-              items-center
-              justify-center
-              rounded-full
-              bg-white
-              border-4 border-yellow-400
-            "
+            class="w-[160px] h-[160px] flex items-center justify-center rounded-full bg-white border-4 border-yellow-400"
           >
             <img
               class="w-[142px] h-[142px] rounded-full"
@@ -673,24 +534,18 @@
     </div>
     <!-- end users -->
     <!-- get our application -->
-    <div class="bg-blue-10/10 pt-10 relative">
-      <div class="container mx-auto flex items-start">
-        <div class="w-1/2 mt-24">
-          <span class="font-inter font-medium text-blue-10 text-lg"
+    <div class="bg-blue-10/10 pb-10 md:pb-0 pt-10 relative">
+      <div class="container mx-auto flex items-start px-6 md:px-0">
+        <div class="w-full md:w-1/2 md:mt-24">
+          <span class="font-inter font-medium text-blue-10 text-base md:text-lg"
             >Get Our Aplication</span
           >
           <h3
-            class="
-              w-[351px]
-              font-inter font-bold
-              text-4xl text-purple-10
-              mt-3
-              mb-8
-            "
+            class="w-full md:w-[351px] font-inter font-bold text-2xl md:text-4xl text-purple-10 mt-3 mb-8"
           >
             You Can Easily Find This App…!
           </h3>
-          <p class="w-[341px] font-inter text-gray-10">
+          <p class="w-full md:w-[341px] font-inter text-gray-10">
             I say chap that’s suing lavatory chip shop gosh off his smashing
             boot are you taking the piss posh loo brilliant.
           </p>
@@ -703,29 +558,33 @@
             <img src="images/playstore.png" alt="" class="cursor-pointer" />
           </div>
         </div>
-        <div class="w-1/2 mt-12">
+        <div class="w-1/2 mt-12 hidden md:block">
           <img src="images/mobile.png" alt="" />
         </div>
       </div>
     </div>
     <!-- end get our application -->
     <!-- article -->
-    <div class="container mx-auto py-16">
+    <div class="container mx-auto py-16 px-6 md:px-0">
       <div class="text-center">
-        <span class="font-inter font-medium text-lg text-blue-10"
+        <span class="font-inter font-medium text-base md:text-lg text-blue-10"
           >Get Our Aplication</span
         >
-        <h3 class="font-inter font-bold text-purple-10 text-4xl mt-3">
+        <h3
+          class="font-inter font-bold text-purple-10 text-2xl md:text-4xl mt-3"
+        >
           Latest News
         </h3>
       </div>
-      <div class="w-[1171px] mx-auto grid grid-cols-3 place-items-center mt-16">
-        <div class="w-[340px]">
+      <div
+        class="w-full md:w-[1171px] mx-auto flex space-x-3 md:space-x-0 overflow-scroll scrollbar-hide snap-x md:grid md:grid-cols-3 md:place-items-center mt-16"
+      >
+        <div class="w-full md:w-[340px] flex-shrink-0 snap-center">
           <div>
             <img
               src="images/pexels-meruyert-gonullu-6589064.png"
               alt=""
-              class="w-[330px] h-[340px] rounded-2xl"
+              class="w-full md:w-[330px] h-[340px] rounded-2xl"
             />
           </div>
           <div class="flex space-x-4 mt-5">
@@ -740,12 +599,12 @@
             </div>
           </div>
         </div>
-        <div class="w-[340px]">
+        <div class="w-full md:w-[340px] flex-shrink-0 snap-center">
           <div>
             <img
               src="images/pexels-cottonbro-6140202.png"
               alt=""
-              class="w-[330px] h-[340px] rounded-2xl"
+              class="w-full md:w-[330px] h-[340px] rounded-2xl"
             />
           </div>
           <div class="flex space-x-4 mt-5">
@@ -760,12 +619,12 @@
             </div>
           </div>
         </div>
-        <div class="w-[340px]">
+        <div class="w-full md:w-[340px] flex-shrink-0 snap-center">
           <div>
             <img
               src="images/pexels-pixabay-163064.png"
               alt=""
-              class="w-[330px] h-[340px] rounded-2xl"
+              class="w-full md:w-[330px] h-[340px] rounded-2xl"
             />
           </div>
           <div class="flex space-x-4 mt-5">
@@ -785,12 +644,16 @@
     <!-- end article -->
     <!-- footer -->
     <footer class="bg-gray-15 pt-16">
-      <div class="container mx-auto">
-        <div class="flex space-x-44">
-          <div class="flex space-x-24">
+      <div class="container mx-auto px-6 md:px-0">
+        <div
+          class="flex flex-col md:flex-row space-y-12 md:space-y-0 md:space-x-44"
+        >
+          <div
+            class="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-24"
+          >
             <div>
               <h3 class="font-inter font-medium text-xl text-white">Home</h3>
-              <ul class="mt-9 flex flex-col space-y-6">
+              <ul class="mt-5 md:mt-9 flex flex-col space-y-6">
                 <li class="font-inter text-gray-40 cursor-pointer">Home</li>
                 <li class="font-inter text-gray-40 cursor-pointer">
                   Community
@@ -803,7 +666,7 @@
               <h3 class="font-inter font-medium text-xl text-white">
                 Resources
               </h3>
-              <ul class="mt-9 flex flex-col space-y-6">
+              <ul class="mt-5 md:mt-9 flex flex-col space-y-6">
                 <li class="font-inter text-gray-40 cursor-pointer">Blog</li>
                 <li class="font-inter text-gray-40 cursor-pointer">News</li>
                 <li class="font-inter text-gray-40 cursor-pointer">Guides</li>
@@ -816,7 +679,7 @@
               <h3 class="font-inter font-medium text-xl text-white">
                 Community
               </h3>
-              <ul class="mt-9 flex flex-col space-y-6">
+              <ul class="mt-5 md:mt-9 flex flex-col space-y-6">
                 <li class="font-inter text-gray-40 cursor-pointer">NewsFeed</li>
                 <li class="font-inter text-gray-40 cursor-pointer">Profile</li>
                 <li class="font-inter text-gray-40 cursor-pointer">Friends</li>
@@ -827,7 +690,7 @@
               <h3 class="font-inter font-medium text-xl text-white">
                 Main links
               </h3>
-              <ul class="mt-9 flex flex-col space-y-6">
+              <ul class="mt-5 md:mt-9 flex flex-col space-y-6">
                 <li class="font-inter text-gray-40 cursor-pointer">Members</li>
                 <li class="font-inter text-gray-40 cursor-pointer">Activity</li>
                 <li class="font-inter text-gray-40 cursor-pointer">Groups</li>
@@ -837,25 +700,18 @@
               </ul>
             </div>
           </div>
-          <div>
-            <h1 class="w-[179px] font-inter font-medium text-white text-xl">
+          <div class="w-full">
+            <h1
+              class="w-full md:w-[179px] font-inter font-medium text-white text-xl"
+            >
               Subscribe Cirkle Newsletter
             </h1>
-            <p class="text-gray-40 w-[299px] font-inter mt-5">
+            <p class="text-gray-40 w-full md:w-[299px] font-inter mt-5">
               Subscribe to be the first one to know about updates. Enter your
               email
             </p>
             <div
-              class="
-                w-[339px]
-                h-12
-                mt-8
-                border border-white
-                rounded-xl
-                flex
-                items-center
-                overflow-hidden
-              "
+              class="w-full md:w-[339px] h-12 mt-8 border border-white rounded-xl flex items-center overflow-hidden"
             >
               <input
                 type="text"
@@ -863,14 +719,7 @@
                 class="outline-none bg-transparent pl-5 flex-grow"
               />
               <button
-                class="
-                  w-[126px]
-                  h-full
-                  bg-white
-                  rounded-xl
-                  font-medium font-inter
-                  text-gray-15
-                "
+                class="w-2/5 md:w-[126px] text-sm md:text-base h-full bg-white font-medium font-inter text-gray-15"
               >
                 Subscribe
               </button>
@@ -878,13 +727,13 @@
           </div>
         </div>
       </div>
-      <div class="bg-gray-45 py-7 mt-28">
+      <div class="bg-gray-45 py-7 mt-28 px-6 md:px-0">
         <div class="container mx-auto">
           <div class="flex items-center justify-between">
-            <p class="font-inter text-sm text-[#F6F6F6]">
+            <p class="hidden md:block font-inter text-sm text-[#F6F6F6]">
               Besnik Creative Agency.
             </p>
-            <img src="images/logo_foot.png" alt="" />
+            <img src="images/logo_foot.png" alt="" class="hidden md:block" />
             <div class="flex items-center space-x-4">
               <img src="images/Twitter.png" alt="" class="cursor-pointer" />
               <img src="images/instagram.png" alt="" class="cursor-pointer" />
@@ -896,5 +745,10 @@
       </div>
     </footer>
     <!-- end footer -->
+    <!-- alpineJs -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.7.1/dist/cdn.min.js"
+    ></script>
   </body>
 </html>
