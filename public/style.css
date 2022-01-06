@@ -997,6 +997,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.75rem;
 }
 
+.rounded-tl-xl{
+  border-top-left-radius: 0.75rem;
+}
+
+.rounded-bl-xl{
+  border-bottom-left-radius: 0.75rem;
+}
+
 .border{
   border-width: 1px;
 }
