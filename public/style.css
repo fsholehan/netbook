@@ -1151,6 +1151,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 1rem;
 }
 
+.pb-6{
+  padding-bottom: 1.5rem;
+}
+
+.pb-10{
+  padding-bottom: 2.5rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -1346,6 +1354,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 2.25rem;
   }
 
+  .md\:mt-24{
+    margin-top: 6rem;
+  }
+
   .md\:block{
     display: block;
   }
@@ -1404,6 +1416,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:w-\[270px\]{
     width: 270px;
+  }
+
+  .md\:w-\[351px\]{
+    width: 351px;
+  }
+
+  .md\:w-\[341px\]{
+    width: 341px;
   }
 
   .md\:grid-cols-2{
