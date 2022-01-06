@@ -661,6 +661,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
+.h-auto{
+  height: auto;
+}
+
+.h-36{
+  height: 9rem;
+}
+
 .w-5{
   width: 1.25rem;
 }
@@ -773,6 +781,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 126px;
 }
 
+.w-36{
+  width: 9rem;
+}
+
 .flex-grow{
   flex-grow: 1;
 }
@@ -791,6 +803,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-rows-2{
@@ -1032,12 +1048,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-to: rgb(33 123 244 / 0.2);
 }
 
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .p-5{
   padding: 1.25rem;
 }
 
 .p-9{
   padding: 2.25rem;
+}
+
+.p-3{
+  padding: 0.75rem;
 }
 
 .py-5{
@@ -1310,6 +1335,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
+  .md\:h-\[182px\]{
+    height: 182px;
+  }
+
   .md\:w-1\/2{
     width: 50%;
   }
@@ -1324,6 +1353,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:w-\[365px\]{
     width: 365px;
+  }
+
+  .md\:w-\[421px\]{
+    width: 421px;
+  }
+
+  .md\:w-\[522px\]{
+    width: 522px;
+  }
+
+  .md\:w-\[315px\]{
+    width: 315px;
+  }
+
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:flex-row{
@@ -1378,6 +1423,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:border-b{
     border-bottom-width: 1px;
+  }
+
+  .md\:p-9{
+    padding: 2.25rem;
   }
 
   .md\:px-0{
