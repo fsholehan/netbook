@@ -426,6 +426,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 *, ::before, ::after{
+  --tw-scroll-snap-strictness: proximity;
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   --tw-ring-offset-shadow: 0 0 #0000;
@@ -665,10 +666,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: auto;
 }
 
-.h-36{
-  height: 9rem;
-}
-
 .w-5{
   width: 1.25rem;
 }
@@ -781,8 +778,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 126px;
 }
 
-.w-36{
-  width: 9rem;
+.flex-shrink-0{
+  flex-shrink: 0;
 }
 
 .flex-grow{
@@ -791,6 +788,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.snap-x{
+  -ms-scroll-snap-type: x var(--tw-scroll-snap-strictness);
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+}
+
+.snap-center{
+  scroll-snap-align: center;
 }
 
 .grid-cols-2{
@@ -945,6 +951,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-scroll{
+  overflow: scroll;
 }
 
 .rounded-2xl{
@@ -1137,6 +1147,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.25rem;
 }
 
+.pb-4{
+  padding-bottom: 1rem;
+}
+
 .text-center{
   text-align: center;
 }
@@ -1301,6 +1315,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline-offset: 2px;
 }
 
+.scrollbar-hide{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+
 .focus\:border-blue-10\/50:focus{
   border-color: rgb(33 123 244 / 0.5);
 }
@@ -1329,6 +1352,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:flex{
     display: flex;
+  }
+
+  .md\:grid{
+    display: grid;
   }
 
   .md\:hidden{
@@ -1367,8 +1394,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 315px;
   }
 
+  .md\:w-\[474px\]{
+    width: 474px;
+  }
+
+  .md\:w-\[1171px\]{
+    width: 1171px;
+  }
+
+  .md\:w-\[270px\]{
+    width: 270px;
+  }
+
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row{
@@ -1421,6 +1464,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: calc(2.75rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .md\:space-x-0 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0px * var(--tw-space-x-reverse));
+    margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .md\:border-b{
     border-bottom-width: 1px;
   }
@@ -1452,6 +1501,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:py-6{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .md\:pb-0{
+    padding-bottom: 0px;
   }
 
   .md\:text-7xl{
